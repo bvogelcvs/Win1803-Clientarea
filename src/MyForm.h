@@ -53,7 +53,7 @@ namespace Bug1803 {
 			this->Text = L"MyForm";
 			this->Padding = System::Windows::Forms::Padding(0);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = Color::Red;
+			this->BackColor = System::Drawing::Color::Red;
 		}
 #pragma endregion
 	protected:

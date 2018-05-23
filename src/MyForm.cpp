@@ -5,9 +5,11 @@
 namespace Bug1803 {
 	void MyForm::WndProc(System::Windows::Forms::Message% message) {
 		if (message.Msg == WM_NCCALCSIZE) {
-			if (message.WParam == System::IntPtr(1)) {
+			if (static_cast<bool>(message.WParam.ToPointer()) == true) {
 				message.Result = System::IntPtr::Zero;
 			}
+		} else if (message.Msg == WM_NCHITTEST) {
+			message.Result = System::IntPtr(HTCAPTION);
 		} else {
 			__super::WndProc(message);
 		}
